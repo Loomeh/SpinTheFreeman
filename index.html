@@ -1,0 +1,57 @@
+<html>
+<title>Spin the Freeman!</title>
+<center>
+<H1>
+<font face="Arial" size="20px" color="#000000">Spin the Freeman!</font>
+</H1>
+<<body bgcolor="#FF8C00">
+<img id="sample" src="freeman.png" alt="Freeman" height="726" width="278"/>
+<br>
+<button type="button" onClick="onClick()" id="rotate-button">S P I N</button>
+<p>Gordon has been spun  <a id="clicks">0</a> times</p>
+
+<script>
+var current_rotation = 0;
+var clicks = 0;
+
+function onClick() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = clicks;
+};
+
+document.querySelector("#rotate-button").addEventListener('click', function() {
+
+	current_rotation += 360;
+
+	document.querySelector("#sample").style.transform = 'rotate(' + current_rotation + 'deg)';
+});
+</script>
+
+<style>
+
+
+button {
+        display: inline-block;
+        background-color: #1c1f1d;
+        border-radius: 10px;
+        border: 4px double #1c1f1d;
+        color: #eeeeee;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+#sample {
+	transition: transform 0.3s;;
+}
+</style>
+</body>
+</center>
+</html>
